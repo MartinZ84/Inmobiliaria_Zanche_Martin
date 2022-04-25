@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/drawable/bt_white.xml" value="0.2425" />
+        <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/drawable/fondo_degradado.xml" value="0.2425" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/drawable/home.xml" value="0.2265" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2265" />
@@ -18,7 +20,7 @@
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_contratos.xml" value="0.25416666666666665" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_inicio.xml" value="0.25416666666666665" />
+        <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_inicio.xml" value="0.128" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_inmuebles.xml" value="0.25416666666666665" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_inquilinos.xml" value="0.25416666666666665" />
         <entry key="..\:/Facultad ULP Martin/Dispositivos moviles/Inmobiliaria_Zanche_Martin/app/src/main/res/layout/fragment_logout.xml" value="0.25416666666666665" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devmhz.inmobiliaria_zanche_martin">
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +28,9 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.Inmobiliaria_Zanche_Martin.NoActionBar">
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAqmzYKkPl9qKKHzXj2lAegbEfNsZ3bYDc" />
     </application>
 
 </manifest>

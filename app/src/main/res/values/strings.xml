@@ -16,4 +16,6 @@
     <string name="inquilinos">Inquilinos</string>
     <string name="contratos">Contratos</string>
     <string name="logout">Logout</string>
+    <string name="yes">Aceptar</string>
+    <string name="no">Cancelar</string>
 </resources>

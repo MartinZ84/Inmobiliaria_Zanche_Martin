@@ -2,11 +2,14 @@ package com.devmhz.inmobiliaria_zanche_martin.ui.logout;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,28 +21,41 @@ import com.devmhz.inmobiliaria_zanche_martin.ui.contratos.ContratosViewModel;
 
 public class LogoutFragment extends Fragment {
 
-    private TextView tvLogOut;
+    private TextView tvLogout;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        LogoutViewModel logoutFragment =
-                new ViewModelProvider(this).get(LogoutViewModel.class);
+    public static LogoutFragment newInstance() {
+        return new LogoutFragment();
+    }
 
-
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_logout, container, false);
-        tvLogOut=root.findViewById(R.id.tvLogout);
-        tvLogOut.setText("Este es el fragment Logout");
-
+        mostrarDialog();
+        tvLogout = root.findViewById(R.id.tvLogout);
+        tvLogout.setText("Este es el fragmento Logout");
 
 
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void mostrarDialog(){
+        AlertDialog.Builder alertDialog =  new AlertDialog.Builder(this.getContext())
+                .setTitle("Cierre de sesión")
+                .setMessage("¿Esta seguro de que desea cerrar la sesión?")
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        System.exit(0);
 
+                    }
+                }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.nav_inicio);
+
+                    }
+                });
+        alertDialog.show();
     }
-
 }
