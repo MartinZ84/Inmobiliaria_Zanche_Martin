@@ -100,4 +100,9 @@ public class Inquilino implements Serializable {
     public void setTelefonoGarante(String telefonoGarante) {
         this.telefonoGarante = telefonoGarante;
     }
+    @Override
+    public String toString() {
+        return getNombre() +" "+getApellido();
+    }
+
 }

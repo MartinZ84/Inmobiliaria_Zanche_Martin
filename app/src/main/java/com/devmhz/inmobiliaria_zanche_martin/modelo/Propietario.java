@@ -1,9 +1,10 @@
 package com.devmhz.inmobiliaria_zanche_martin.modelo;
 
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Propietario {
+public class Propietario implements Serializable {
 
     private int id;
     private Long dni;

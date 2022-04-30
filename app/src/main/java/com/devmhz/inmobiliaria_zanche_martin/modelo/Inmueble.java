@@ -114,5 +114,11 @@ public class Inmueble implements Serializable {
     public int hashCode() {
         return Objects.hash(idInmueble);
     }
+
+
+    @Override
+    public String toString() {
+        return "Ubicado en: " + getDireccion();
+    }
 }
 

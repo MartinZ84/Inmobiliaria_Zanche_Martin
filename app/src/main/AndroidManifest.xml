@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devmhz.inmobiliaria_zanche_martin">
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/home128"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/home128"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Inmobiliaria_Zanche_Martin">
+        android:theme="@style/Theme.Inmobiliaria_Zanche_Martin"
+        android:usesCleartextTraffic="true">
 
 
         <activity

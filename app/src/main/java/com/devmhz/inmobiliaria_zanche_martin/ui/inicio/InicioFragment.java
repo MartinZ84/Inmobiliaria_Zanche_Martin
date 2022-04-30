@@ -76,7 +76,7 @@ private Button btCambiarMapa, btUbicacion;
         mapa.animateCamera(camUpdICT);
 
         mapa.addMarker(new MarkerOptions().position(INMOBILIARIA)).setTitle("Inmobiliaria MHZ");
-        mapa.addMarker(new MarkerOptions().position(ULP)).setTitle("ULP");
+        //mapa.addMarker(new MarkerOptions().position(ULP)).setTitle("ULP");
         mapa.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
 

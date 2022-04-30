@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.contratos.DetalleContratoFragment"
+android:fillViewport="true"
+android:background="@drawable/fondo_degradado">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Ver pagos realizados"
+            android:textColor="#fFFFFFFf"
+
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@id/guideline4" />
+
+        <TextView
+            android:id="@+id/tvFechaFin"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16sp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvMonto"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvTitInquilino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Inquilino"
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvMonto"
+            app:layout_constraintVertical_bias="0.099" />
+
+        <TextView
+            android:id="@+id/tvInquilino"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitInquilino"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvTitInmueble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Inmueble"
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvInquilino"
+            app:layout_constraintVertical_bias="0.099" />
+
+        <TextView
+            android:id="@+id/tvInnmueble"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitInmueble"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/btPagos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagos"
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.796"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintVertical_bias="0.045"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="190dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintStart_toEndOf="@id/guideline3" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Fecha Finalización"
+            android:textColor="#fFFFFFFf"
+
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvFechaInicio"
+            app:layout_constraintVertical_bias="0.101" />
+
+        <TextView
+            android:id="@+id/tvFechaInicio"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Monto del alquiler"
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvFechaFin"
+            app:layout_constraintVertical_bias="0.101" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Fecha Inicio"
+
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvId"
+            app:layout_constraintVertical_bias="0.053" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Código del Contrato"
+            android:textColor="#fFFFFFFf"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView28"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Información del contrato"
+            android:textColor="#9C27B0"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

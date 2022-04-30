@@ -51,6 +51,8 @@ public class LoginViewModel extends AndroidViewModel {
             Intent intent=new Intent(context,MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
+            //Desregistro el sensor despues del login para que no pueda accionarse despues
+            sensorManager.unregisterListener(leeSensor);
         } else{
             mensaje.setValue("Usuario y/o Contraseña incorrecto!!!");
         }
@@ -68,17 +70,19 @@ public class LoginViewModel extends AndroidViewModel {
         }
     }
 
+
+
     private class LeeSensor implements SensorEventListener {
         @Override
         public void onSensorChanged(SensorEvent sensorEvent) {
-            if(sensorEvent.values[0] > 10){
+            if(sensorEvent.values[0] > 20){
                 Uri tel = Uri.parse("tel:113");
                 //CUANDO SE LLAMA A STARTACTIVITY DESDE FUERA DE UNA ACTIVITY SE DEBE AÑADIR EL FLAG :FLAG_ACTIVITY_NEW_TASK
                 //https://elbauldelprogramador.com/solucionar-android-calling-startactivity-from-outside-of-an-activity-context-requires-the-flag_activity_new_task-flag/
                 context.startActivity(new Intent(Intent.ACTION_CALL, tel).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
             }
-            Log.d("Salida", ""+ sensorEvent.values.length);
+            //Log.d("Salida", ""+ sensorEvent.values.length);
 
         }
 
