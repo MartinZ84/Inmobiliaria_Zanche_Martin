@@ -43,10 +43,10 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.tvCodigoPago.setText(pagos.get(position).getIdPago() + "");
-        holder.tvNumeroPago.setText(pagos.get(position).getNumero()+"");
-        holder.tvCodigoContratoPagos.setText(pagos.get(position).getContrato().getIdContrato()+"");
-        holder.tvFechaPago.setText(pagos.get(position).getFechaDePago()+"");
+        holder.tvCodigoPago.setText(pagos.get(position).getId() + "");
+        holder.tvNumeroPago.setText(pagos.get(position).getNroPago()+"");
+        holder.tvCodigoContratoPagos.setText(pagos.get(position).getContratoId()+"");
+        holder.tvFechaPago.setText(pagos.get(position).fechaPago()+"");
         holder.tvImporte.setText("$" + pagos.get(position).getImporte());
         contratoPago = pagos.get(position).getContrato();
     }
@@ -66,7 +66,7 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
             tvNumeroPago = itemView.findViewById(R.id.tvNumeroPago);
             tvImporte = itemView.findViewById(R.id.tvImporte);
             tvFechaPago = itemView.findViewById(R.id.tvFechaPago);
-            itemView.setOnClickListener(new View.OnClickListener() {
+          /*  itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
@@ -74,7 +74,7 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
                     bundle.putSerializable("contrato", cont);
                     Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.pagosFragment, bundle);
                 }
-            });
+            });*/
         }
     }
 }

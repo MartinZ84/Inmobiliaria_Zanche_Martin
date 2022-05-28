@@ -30,26 +30,7 @@ private LatLng INMOBILIARIA = new LatLng(-33.3079039, -66.3358829);
 private LatLng ULP = new LatLng(-33.150720, -66.306864);
 private Button btCambiarMapa, btUbicacion;
 
-    /*public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        InicioViewModel homeViewModel =
-                new ViewModelProvider(this).get(InicioViewModel.class);
 
-        //setContentView(R.layout.activity_main);
-       // SupportMapFragment smf = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.frMap);
-        //SupportMapFragment smf= (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.frMap);
-        SupportMapFragment smf= (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.frMap);
-        smf.getMapAsync(new MapaInmobiliaria());
-
-        View root = inflater.inflate(R.layout.fragment_inicio, container, false);
-
-        tvHome=root.findViewById(R.id.text_home);
-        tvHome.setText("Este es el fragment inicio");
-
-
-
-        return root;
-    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

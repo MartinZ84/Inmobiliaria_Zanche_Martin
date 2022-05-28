@@ -10,11 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 import androidx.navigation.Navigation;
 
 import com.devmhz.inmobiliaria_zanche_martin.R;
-import com.devmhz.inmobiliaria_zanche_martin.Request.ApiClient;
 
 /*public class LogoutViewModel extends AndroidViewModel {
     private Context context;

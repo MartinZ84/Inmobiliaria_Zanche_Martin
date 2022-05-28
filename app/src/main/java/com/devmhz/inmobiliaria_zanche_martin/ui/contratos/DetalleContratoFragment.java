@@ -56,9 +56,9 @@ public class DetalleContratoFragment extends Fragment {
             @Override
             public void onChanged(Contrato contrato) {
                 tvCodigoContrato.setText(contrato.getIdContrato() + "");
-                tvFechaInicio.setText(contrato.getFechaInicio());
-                tvFechaFinalizacion.setText(contrato.getFechaFin());
-                tvMontoDeAlquier.setText("$ " +contrato.getMontoAlquiler());
+                tvFechaInicio.setText(contrato.fechaInicioOnly());
+                tvFechaFinalizacion.setText(contrato.fechaFinOnly());
+                tvMontoDeAlquier.setText("$ " +contrato.getPrecio());
                 tvInquilinoContrato.setText(contrato.getInquilino().toString());
                 tvInmuebleContrato.setText(contrato.getInmueble().toString());
             }

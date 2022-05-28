@@ -9,15 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.devmhz.inmobiliaria_zanche_martin.LoginActivity;
 import com.devmhz.inmobiliaria_zanche_martin.R;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 
@@ -39,6 +43,12 @@ public class InmuebleFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.inmueble_fragment, container, false);
         inicializar(root);
+        inmuebleViewModel.getMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+            }
+        });
         return root;
     }
 
@@ -55,13 +65,27 @@ public class InmuebleFragment extends Fragment {
         inmuebleViewModel.getInmueble().observe(getActivity(), new Observer<Inmueble>() {
             @Override
             public void onChanged(Inmueble inmueble) {
-                tvId.setText(inmueble.getIdInmueble() + "");
+                tvId.setText(inmueble.getId() + "");
                 tvDireccion.setText(inmueble.getDireccion());
                 tvTipo.setText(inmueble.getTipo());
                 tvUso.setText(inmueble.getUso());
                 tvAmbientes.setText(inmueble.getAmbientes() + "");
                 tvPrecio.setText("$" + inmueble.getPrecio());
-                cbEstado.setChecked(inmueble.isEstado());
+                cbEstado.setChecked(inmueble.isEstadoInmueble());
+                cbEstado.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        inmuebleViewModel.cambiarDisponibilidad(isChecked);
+                        if (isChecked) {
+                         Log.d("checkbox", String.valueOf(isChecked));
+
+                        } else
+                        Log.d("checkbox", String.valueOf(isChecked));
+                    }
+                });
+
+
+
 
                 Glide.with(getContext())
                         .load(inmueble.getImagen())

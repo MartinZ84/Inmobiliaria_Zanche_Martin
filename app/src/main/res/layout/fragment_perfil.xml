@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:text="Contraseña"
+        android:text="Cambiar Contraseña"
         android:textColor="@color/primary_text"
 
         android:textSize="20sp"
@@ -166,7 +166,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="Nueva Contraseña"
         android:inputType="textPassword"
         android:background="@drawable/bt_white"
         android:enabled="false"

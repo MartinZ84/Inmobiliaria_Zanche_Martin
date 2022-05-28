@@ -7,9 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.devmhz.inmobiliaria_zanche_martin.Request.ApiClient;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Contrato;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 
@@ -30,9 +28,11 @@ public class DetalleContratoViewModel extends AndroidViewModel {
     }
 
     public void cargarInmuebleAlquilados(Bundle bundle) {
-        Inmueble inmueble = (Inmueble) bundle.getSerializable("inmueble");
-        ApiClient api = ApiClient.getApi();
-        this.contrato.setValue(api.obtenerContratoVigente(inmueble));
+      //  Inmueble inmueble = (Inmueble) bundle.getSerializable("inmueble");
+        //ApiClient api = ApiClient.getApi();
+        //this.contrato.setValue(api.obtenerContratoVigente(inmueble));
+        Contrato contrato = (Contrato) bundle.getSerializable("contrato");
+        this.contrato.setValue(contrato);
     }
 
 }

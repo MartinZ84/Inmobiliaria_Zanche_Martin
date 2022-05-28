@@ -3,34 +3,46 @@ package com.devmhz.inmobiliaria_zanche_martin.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
 public class Contrato implements Serializable {
 
-    private int idContrato;
+    private int id;
     private String fechaInicio;
     private String fechaFin;
-    private double montoAlquiler;
+    private int precio;
+    private String estado;
     private Inquilino inquilino;
     private Inmueble inmueble;
 
     public Contrato() {}
-    public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble) {
-        this.idContrato = idContrato;
+    public Contrato(int id, String fechaInicio, String fechaFin, int precio, Inquilino inquilino, Inmueble inmueble) {
+        this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.montoAlquiler = montoAlquiler;
+        this.precio = precio;
+        this.inquilino = inquilino;
+        this.inmueble = inmueble;
+    }
+
+    public Contrato(int id, String fechaInicio, String fechaFin, int precio, String estado, Inquilino inquilino, Inmueble inmueble) {
+        this.id = id;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.precio = precio;
+        this.estado = estado;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
     }
 
     public int getIdContrato() {
-        return idContrato;
+        return id;
     }
 
     public void setIdContrato(int idContrato) {
-        this.idContrato = idContrato;
+        this.id = idContrato;
     }
 
     public String getFechaInicio() {
@@ -49,12 +61,12 @@ public class Contrato implements Serializable {
         this.fechaFin = fechaFin;
     }
 
-    public double getMontoAlquiler() {
-        return montoAlquiler;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setMontoAlquiler(double montoAlquiler) {
-        this.montoAlquiler = montoAlquiler;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
 
@@ -74,16 +86,58 @@ public class Contrato implements Serializable {
         this.inmueble = inmueble;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contrato contrato = (Contrato) o;
-        return idContrato == contrato.idContrato;
+        return id == contrato.id;
+    }
+
+
+    public String fechaInicio() {
+        String año = getFechaInicio().substring(0,4);
+        String mes = getFechaInicio().substring(5,7);
+        String dia = getFechaInicio().substring(8,10);
+        return "Fecha Inicio: " + dia +"/"+mes+"/"+año;
+    }
+
+    public String fechaFin() {
+        String año = getFechaFin().substring(0,4);
+        String mes = getFechaFin().substring(5,7);
+        String dia = getFechaFin().substring(8,10);
+        return "Fecha Fin: " + dia +"/"+mes+"/"+año;
+    }
+
+    public String fechaInicioOnly() {
+        String año = getFechaInicio().substring(0,4);
+        String mes = getFechaInicio().substring(5,7);
+        String dia = getFechaInicio().substring(8,10);
+        return dia +"/"+mes+"/"+año;
+    }
+
+    public String fechaFinOnly() {
+        String año = getFechaFin().substring(0,4);
+        String mes = getFechaFin().substring(5,7);
+        String dia = getFechaFin().substring(8,10);
+        return dia +"/"+mes+"/"+año;
+    }
+
+    @Override
+    public String toString() {
+        return "Ubicación: " + getInmueble().getDireccion();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idContrato);
+        return Objects.hash(id);
     }
 }

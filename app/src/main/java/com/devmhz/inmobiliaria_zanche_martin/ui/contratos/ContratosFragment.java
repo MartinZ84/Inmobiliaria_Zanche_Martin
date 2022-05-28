@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.devmhz.inmobiliaria_zanche_martin.R;
+import com.devmhz.inmobiliaria_zanche_martin.modelo.Contrato;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 import com.devmhz.inmobiliaria_zanche_martin.ui.inicio.InicioViewModel;
 
@@ -42,7 +43,16 @@ public class ContratosFragment extends Fragment {
         rvContratos = view.findViewById(R.id.rvContratos);
 
         contratosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(ContratosViewModel.class);
-        contratosViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        contratosViewModel.getContratos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
+            @Override
+            public void onChanged(ArrayList<Contrato> contratos) {
+                GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
+                rvContratos.setLayoutManager(gridLayoutManager);
+                adapter = new ContratoAdapter(context, contratos, getLayoutInflater());
+                rvContratos.setAdapter(adapter);
+            }
+
+/*
             @Override
             public void onChanged(ArrayList<Inmueble> inmuebles) {
                 GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
@@ -50,6 +60,7 @@ public class ContratosFragment extends Fragment {
                 adapter = new ContratoAdapter(context, inmuebles, getLayoutInflater());
                 rvContratos.setAdapter(adapter);
             }
+*/
         });
         contratosViewModel.cargarInmueblesAlquilados();
     }

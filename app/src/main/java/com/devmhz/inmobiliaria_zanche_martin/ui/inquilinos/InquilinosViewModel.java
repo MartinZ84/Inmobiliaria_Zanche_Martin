@@ -7,9 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.devmhz.inmobiliaria_zanche_martin.Request.ApiClient;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inquilino;
 
@@ -42,9 +40,9 @@ public class InquilinosViewModel extends AndroidViewModel {
 
     public void cargarInmueblesAlquilados() {
         //Acá traemos todos los inmuebles de la base de datos
-        ApiClient api=ApiClient.getApi();
-        ArrayList<Inmueble> inmuebles=api.obtenerPropiedadesAlquiladas();
-        this.inmuebles.setValue(inmuebles);
+        //ApiClient api=ApiClient.getApi();
+      //  ArrayList<Inmueble> inmuebles=api.obtenerPropiedadesAlquiladas();
+   //     this.inmuebles.setValue(inmuebles);
 
     }
 }
