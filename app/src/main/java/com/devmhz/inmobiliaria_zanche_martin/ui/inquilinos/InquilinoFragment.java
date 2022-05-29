@@ -59,18 +59,19 @@ public class InquilinoFragment extends Fragment {
         tvLugarTrabajo=view.findViewById(R.id.tvLugarTrabajo);
         mViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinoViewModel.class);
 
-        mViewModel.getInquilino().observe(getActivity(), new Observer<Inquilino>() {
+
+            mViewModel.getInquilino().observe(getActivity(), new Observer<Contrato>() {
             @Override
-            public void onChanged(Inquilino inquilino) {
-                tvId.setText(inquilino.getIdInquilino() + "");
-                tvNombre.setText(inquilino.getNombre());
-                tvApellido.setText(inquilino.getApellido());
-                tvDni.setText("" +inquilino.getDNI());
-                tvEmail.setText(inquilino.getEmail().toString());
-                tvTelefono.setText(inquilino.getTelefono().toString());
-                tvGarante.setText(inquilino.getNombreGarante().toString());
-                tvTelGarante.setText(inquilino.getTelefonoGarante().toString());
-                tvLugarTrabajo.setText(inquilino.getLugarDeTrabajo().toString());
+            public void onChanged(Contrato contrato) {
+                tvId.setText(contrato.getInquilino().getId() + "");
+                tvNombre.setText(contrato.getInquilino().getNombre());
+                tvApellido.setText(contrato.getInquilino().getApellido());
+                tvDni.setText(contrato.getInquilino().getDni());
+                tvEmail.setText(contrato.getInquilino().getEmail());
+                tvTelefono.setText(contrato.getInquilino().getTelefono());
+                tvGarante.setText(contrato.getNombre_Garante()  + " " + contrato.getApellido_Garante());
+                tvTelGarante.setText(contrato.getTelefono_Garante() + " " + contrato.getApellido_Garante());
+                tvLugarTrabajo.setText(contrato.getInquilino().getLugar_Trabajo());
 
             }
         });

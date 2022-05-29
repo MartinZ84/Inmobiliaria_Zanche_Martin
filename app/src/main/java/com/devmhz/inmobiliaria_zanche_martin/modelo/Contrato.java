@@ -16,6 +16,23 @@ public class Contrato implements Serializable {
     private String estado;
     private Inquilino inquilino;
     private Inmueble inmueble;
+    private String nombre_Garante;
+    private String apellido_Garante;
+    private String telefono_Garante;
+
+
+    public Contrato(int id, String fechaInicio, String fechaFin, int precio, String estado, Inquilino inquilino, Inmueble inmueble, String nombre_Garante, String apellido_Garante, String telefono_Garante) {
+        this.id = id;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.precio = precio;
+        this.estado = estado;
+        this.inquilino = inquilino;
+        this.inmueble = inmueble;
+        this.nombre_Garante = nombre_Garante;
+        this.apellido_Garante = apellido_Garante;
+        this.telefono_Garante = telefono_Garante;
+    }
 
     public Contrato() {}
     public Contrato(int id, String fechaInicio, String fechaFin, int precio, Inquilino inquilino, Inmueble inmueble) {
@@ -92,6 +109,30 @@ public class Contrato implements Serializable {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getNombre_Garante() {
+        return nombre_Garante;
+    }
+
+    public void setNombre_Garante(String nombre_Garante) {
+        this.nombre_Garante = nombre_Garante;
+    }
+
+    public String getApellido_Garante() {
+        return apellido_Garante;
+    }
+
+    public void setApellido_Garante(String apellido_Garante) {
+        this.apellido_Garante = apellido_Garante;
+    }
+
+    public String getTelefono_Garante() {
+        return telefono_Garante;
+    }
+
+    public void setTelefono_Garante(String telefono_Garante) {
+        this.telefono_Garante = telefono_Garante;
     }
 
     @Override

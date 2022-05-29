@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.devmhz.inmobiliaria_zanche_martin.R;
+import com.devmhz.inmobiliaria_zanche_martin.modelo.Contrato;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inquilino;
 import com.devmhz.inmobiliaria_zanche_martin.ui.contratos.ContratoAdapter;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class InquilinosFragment extends Fragment {
     private RecyclerView rvInquilinos;
     private InquilinosViewModel inquilinosViewModel;
+    private ContratosViewModel contratosViewModel;
     private InquilinoAdapter adapter;
     private Context context;
     @Override
@@ -43,13 +45,23 @@ public class InquilinosFragment extends Fragment {
     private void inicializar(View view) {
         rvInquilinos = view.findViewById(R.id.rvInquilinos);
 
-        inquilinosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinosViewModel.class);
+      /*  inquilinosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinosViewModel.class);
         inquilinosViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
             @Override
             public void onChanged(ArrayList<Inmueble> inmuebles) {
                 GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
                 rvInquilinos.setLayoutManager(gridLayoutManager);
                 adapter = new InquilinoAdapter(context, inmuebles, getLayoutInflater());
+                rvInquilinos.setAdapter(adapter);
+            }
+        });*/
+        inquilinosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinosViewModel.class);
+        inquilinosViewModel.getContratos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
+            @Override
+            public void onChanged(ArrayList<Contrato> contratos) {
+                GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
+                rvInquilinos.setLayoutManager(gridLayoutManager);
+                adapter = new InquilinoAdapter(context, contratos, getLayoutInflater());
                 rvInquilinos.setAdapter(adapter);
             }
         });

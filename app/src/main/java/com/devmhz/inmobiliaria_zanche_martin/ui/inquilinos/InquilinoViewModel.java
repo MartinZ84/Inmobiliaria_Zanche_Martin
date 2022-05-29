@@ -6,16 +6,18 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.devmhz.inmobiliaria_zanche_martin.modelo.Contrato;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inmueble;
 import com.devmhz.inmobiliaria_zanche_martin.modelo.Inquilino;
 
 public class InquilinoViewModel extends ViewModel {
-    private MutableLiveData<Inquilino> inquilino;
+    private MutableLiveData<Contrato> inquilino;
+
     public InquilinoViewModel() {
         super();
     }
 
-    public LiveData<Inquilino> getInquilino() {
+    public LiveData<Contrato> getInquilino() {
         if (inquilino == null) {
             inquilino = new MutableLiveData<>();
         }
@@ -23,8 +25,9 @@ public class InquilinoViewModel extends ViewModel {
     }
 
     public void cargarInquilino(Bundle bundle) {
-        Inmueble inmueble  = (Inmueble) bundle.getSerializable("inmueble");
+        Contrato contrato  = (Contrato) bundle.getSerializable("contrato");
         //ApiClient api = ApiClient.getApi();
-      //  this.inquilino.setValue(api.obtenerInquilino(inmueble));
+       this.inquilino.setValue(contrato);
+
     }
 }
