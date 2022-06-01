@@ -71,7 +71,7 @@ public class InmuebleFragment extends Fragment {
                 tvUso.setText(inmueble.getUso());
                 tvAmbientes.setText(inmueble.getAmbientes() + "");
                 tvPrecio.setText("$" + inmueble.getPrecio());
-                cbEstado.setChecked(inmueble.isEstadoInmueble());
+                cbEstado.setChecked(inmueble.getEstadoInmueble());
                 cbEstado.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

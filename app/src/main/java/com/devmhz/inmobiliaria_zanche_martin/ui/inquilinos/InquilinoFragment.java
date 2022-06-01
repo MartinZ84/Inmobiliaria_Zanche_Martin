@@ -70,7 +70,7 @@ public class InquilinoFragment extends Fragment {
                 tvEmail.setText(contrato.getInquilino().getEmail());
                 tvTelefono.setText(contrato.getInquilino().getTelefono());
                 tvGarante.setText(contrato.getNombre_Garante()  + " " + contrato.getApellido_Garante());
-                tvTelGarante.setText(contrato.getTelefono_Garante() + " " + contrato.getApellido_Garante());
+                tvTelGarante.setText(contrato.getTelefono_Garante());
                 tvLugarTrabajo.setText(contrato.getInquilino().getLugar_Trabajo());
 
             }

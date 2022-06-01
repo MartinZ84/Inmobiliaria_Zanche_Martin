@@ -53,7 +53,7 @@ public class InmueblesViewModel extends AndroidViewModel {
                 if (response.isSuccessful()){
                     response.body().forEach(e -> {
                         Inmueble i= new Inmueble(e.getId(),e.getDireccion(),e.getUso(),e.getTipo(),e.getAmbientes(),
-                        e.getPrecio(),e.getSuperficie(),e.getEstado(),e.isEstadoInmueble(), e.getImagen());
+                        e.getPrecio(),e.getSuperficie(),e.getEstado(),e.getEstadoInmueble(), e.getImagen());
                      inmueblesList.add(i);
 
                     });
